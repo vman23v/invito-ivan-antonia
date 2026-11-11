@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c0e18">
+<title>Un invito per Ivan & Antonia — Le Petit Chef</title>
+<style>
+:root{
+  --bg:#0c0e18;
+  --gold:#e8c99a;
+  --gold-soft:#c9a86c;
+  --cream:#f6f1e7;
+  --muted:#c8c4ce;
+  --line:rgba(201,168,108,.35);
+  --card:#161826;
+  --shadow:0 20px 50px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #2a2840 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, #1a1528 0%, var(--bg) 60%);
+  color:var(--cream);
+  font-family:"Georgia", "Times New Roman", serif;
+  line-height:1.65;
+  min-height:100vh;
+}
+main{max-width:740px;margin:auto;padding:32px 18px 56px}
+.intro{text-align:center;padding:8px 0 28px}
+.eyebrow{
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:600;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+h1{
+  font-size:clamp(38px,8vw,58px);
+  font-weight:400;
+  font-style:italic;
+  color:var(--gold);
+  margin:6px 0 4px;
+  letter-spacing:-.01em;
+}
+.sub{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  letter-spacing:.22em;
+  color:#e4dcc8;
+  margin-top:4px;
+}
+.poster-wrap{
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:#121420;
+  position:relative;
+}
+.poster{display:block;width:100%;height:auto}
+.below{
+  text-align:center;
+  margin:28px auto 36px;
+  max-width:540px;
+}
+.below p{color:var(--muted);margin:6px 0;font-size:17px}
+.gold{
+  color:var(--gold);
+  font-style:italic;
+  font-size:20px;
+  margin-top:4px;
+}
+section{
+  margin:32px 0;
+  padding:28px 22px 24px;
+  border:1px solid rgba(78,75,97,.6);
+  border-radius:22px;
+  background:linear-gradient(155deg,#1c1e30 0%,#12141f 100%);
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+h2{
+  font-weight:400;
+  color:var(--gold);
+  font-size:clamp(26px,5.5vw,34px);
+  line-height:1.15;
+  text-align:center;
+  margin:0 0 10px;
+}
+.lead{
+  text-align:center;
+  color:var(--muted);
+  margin:0 auto 22px;
+  max-width:520px;
+  font-size:16.5px;
+}
+.gift{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  justify-content:center;
+  margin:8px 0 20px;
+  text-align:center;
+}
+.gift-card{
+  background:linear-gradient(145deg,#2a2418,#1a1610);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px 20px;
+  min-width:240px;
+  flex:1;
+  max-width:300px;
+}
+.gift-card strong{
+  display:block;
+  color:var(--gold);
+  font-size:22px;
+  font-style:italic;
+  margin:4px 0;
+}
+.gift-card span{
+  color:var(--muted);
+  font-size:14.5px;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+figure{
+  margin:0;
+  cursor:pointer;
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+figure:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+figure img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:transform .4s ease, filter .4s ease;
+}
+figure:hover img{transform:scale(1.03);filter:brightness(1.05)}
+figcaption{
+  text-align:center;
+  color:#e8d6b4;
+  font-style:italic;
+  font-size:15px;
+  padding:10px 8px 8px;
+}
+.tap{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#b0a89c;
+  text-align:center;
+  margin-top:16px;
+}
+details{
+  margin:20px 0 0;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#1a1830;
+  padding:16px 18px;
+}
+details[open]{border-color:var(--gold-soft)}
+summary{
+  cursor:pointer;
+  text-align:center;
+  color:var(--gold);
+  font-size:17px;
+  list-style:none;
+  user-select:none;
+}
+summary::-webkit-details-marker{display:none}
+summary:after{
+  content:"＋";
+  font-family:Arial,sans-serif;
+  font-size:18px;
+  margin-left:10px;
+  opacity:.7;
+}
+details[open] summary:after{content:"−"}
+.detail-text{
+  text-align:center;
+  color:var(--muted);
+  padding:14px 4px 4px;
+  font-size:16px;
+}
+.sign{
+  text-align:center;
+  padding:28px 12px 12px;
+}
+.sign h2{font-size:32px;margin-bottom:12px}
+.sign p{color:var(--muted);margin:10px 0;font-size:17px}
+.signature{
+  font-size:36px;
+  font-style:italic;
+  color:var(--gold);
+  margin-top:6px;
+}
+.foot{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-align:center;
+  color:#8a8696;
+  margin-top:32px;
+}
+#lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:rgba(8,9,18,.92);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(6px);
+}
+#lightbox.open{display:flex}
+#lightbox img{
+  max-width:100%;
+  max-height:86vh;
+  border-radius:14px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  border:1px solid var(--line);
+}
+#close{
+  position:absolute;
+  top:16px;
+  right:18px;
+  border:1px solid var(--gold-soft);
+  background:#161526;
+  color:#fff;
+  border-radius:30px;
+  padding:10px 16px;
+  font-size:14px;
+  cursor:pointer;
+  font-family:Arial,sans-serif;
+}
+#close:hover{background:#1f1e30}
+@media(min-width:640px){
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  main{padding:40px 24px 64px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="intro">
+    <div class="eyebrow">Un pensiero speciale</div>
+    <h1>Per Ivan & Antonia</h1>
+    <div class="sub">LA CENA NEL MULTIVERSO IN 3D</div>
+  </header>
+
+  <div class="poster-wrap">
+    <img class="poster" src="data:image/jpeg;base64,[TRUNCATED FOR LENGTH - FULL VERSION IN LOCAL FILE]" alt="Invito Le Petit Chef per Ivan e Antonia — Gift Card e serata all’Aleph Rome Hotel">
+  </div>
+
+  <!-- Note: The full base64 images are in the local standalone file. 
+       For the public link, we recommend enabling GitHub Pages or using htmlpreview. -->
+
+  <div class="below">
+    <p>Siete pronti a mettere in pausa la realtà?</p>
+    <div class="gold">Un viaggio gastronomico unico, tra proiezioni 3D, fantasia e alta cucina. ♥</div>
+  </div>
+
+  <section>
+    <div class="eyebrow" style="text-align:center">Il regalo</div>
+    <h2>Gift Card da 150 €</h2>
+    <div class="gift">
+      <div class="gift-card">
+        <span>IL VOSTRO REGALO</span>
+        <strong>150 €</strong>
+        <span>per vivere l’esperienza di<br>Le Petit Chef<br>all’Aleph Rome Hotel</span>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:8px">Il piccolo chef vi guiderà a tavola: animazioni e proiezioni accompagnano ogni portata, trasformando la cena in un piccolo spettacolo.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow" style="text-align:center">Scorci dell’esperienza</div>
+    <h2>La tavola prende vita</h2>
+    <p class="lead">Il piccolo chef, le proiezioni immersive e i piatti che diventano mondi da esplorare. Tocca una foto per guardarla da vicino.</p>
+    <div class="gallery">
+      <figure>
+        <img src="data:image/jpeg;base64,[IMAGE1]" alt="Il piccolo chef sulla tavola con gli ospiti">
+        <figcaption>Un piccolo chef, grandi avventure</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/jpeg;base64,[IMAGE2]" alt="Proiezioni sulla tavola e sul piatto">
+        <figcaption>Quando la tavola prende vita</figcaption>
+      </figure>
+      <figure>
+        <img src="data:image/jpeg;base64,[IMAGE3]" alt="Chef in miniatura e piatto con proiezioni">
+        <figcaption>Un mondo intero da assaporare</figcaption>
+      </figure>
+    </div>
+    <div class="tap">Tocca una fotografia per ingrandirla</div>
+
+    <details>
+      <summary>Una curiosità sulla cena</summary>
+      <div class="detail-text">Durante la serata il tavolo diventa un palcoscenico: animazioni e proiezioni 3D accompagnano le portate, trasformando la cena in un piccolo viaggio tra fantasia e gusto.</div>
+    </details>
+  </section>
+
+  <section>
+    <div class="eyebrow" style="text-align:center">Un pensiero in più</div>
+    <h2>Mi fa solo piacere</h2>
+    <p class="lead">Mi fa solo piacere che Ivan possa godersi questo regalo con una persona a cui tiene tanto. ♥<br><br>E se dopo vorrete passare da me, casa è aperta: un po’ di tempo insieme, senza formalità.</p>
+  </section>
+
+  <div class="sign">
+    <h2>Buon compleanno, Ivan!</h2>
+    <p>Che questa serata sia bella per te e per Antonia.</p>
+    <p>Un abbraccio grande,</p>
+    <div class="signature">Manuel ♥</div>
+  </div>
+
+  <div class="foot">LE PETIT CHEF · ALL’ALEPH ROME HOTEL · ROMA</div>
+</main>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ingrandita">
+  <button id="close" type="button" aria-label="Chiudi">Chiudi ✕</button>
+  <img id="large" alt="">
+</div>
+
+<script>
+const box = document.getElementById('lightbox');
+const large = document.getElementById('large');
+const closeBtn = document.getElementById('close');
+
+document.querySelectorAll('figure').forEach(fig => {
+  fig.addEventListener('click', () => {
+    const img = fig.querySelector('img');
+    large.src = img.src;
+    large.alt = img.alt || '';
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  box.classList.remove('open');
+  document.body.style.overflow = '';
+  large.src = '';
+}
+
+closeBtn.addEventListener('click', closeLightbox);
+box.addEventListener('click', e => { if (e.target === box) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && box.classList.contains('open')) closeLightbox();
+});
+</script>
+</body>
+</html>
